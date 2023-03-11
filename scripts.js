@@ -14,8 +14,22 @@ for (let i = 0; i < columns; i++) {
     canvas.appendChild(column);
 }
 
+let ismouseDown = false
+
+function changeColor () {
+    if (ismouseDown) {
+        this.classList.add("change")
+    }
+}
+
+
+
 const pixels = Array.from(document.querySelectorAll(".row"));
-pixels.forEach(pixel => pixel.addEventListener("mousemove", () => {
-    pixel.classList.add("change");
+pixels.forEach(pixel => pixel.addEventListener("mousemove", changeColor));
+pixels.forEach(pixel => pixel.addEventListener("mousedown", () => {
+    ismouseDown = true
+}));
+pixels.forEach(pixel => pixel.addEventListener("mouseup", () => {
+    ismouseDown = false
 }));
 
