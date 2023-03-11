@@ -1,0 +1,54 @@
+body {
+    text-align: center;
+
+}
+
+#container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.tools {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.canvas-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.udrdbtns {
+   display: flex;
+   
+}
+
+/* GRID */
+.canvas {
+    display: flex;
+    height: 480px;
+    width: 480px;
+    border:1px solid black;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+   flex: 1;
+   
+
+}
+
+/* COLOR */
+
+.change {
+    background: black;
+}
+
+

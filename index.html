@@ -5,17 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Drawing Canvas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+    
 </head>
 <body>
-    <div class="title">Pixel Drawing</div>
+    <h1 class="title">Pixel Drawing</h1>
     <div id="container">
-        <div id="canvas-size"></divclss>
-        <div id="tools"></div>
-        <div id="canvas-box">
-            <div class="canvas"></div>
-            <div class="rdudbtns"></div>
+        <div id="canvas-size"></div>
+        <div class="tools">
+            <button class="btn-pencil"><img src="./images/pencil-f.svg" alt="pencil"></button>
+            <button class="btn-eraser"><img src="./images/rubber.svg" alt="eraser"></button>
+            <button class="btn-rainbow">Rainbow</button>
+            <button class="btn-clear">Clear</button>
+            <div class="color-palette"></div>
         </div>
-    </divc>
+        <div class="canvas-box">
+            <div class="canvas"></div>
+            <div class="udrdbtns">
+                <button class="undo"><img src="./images/arrow-square-left.svg" alt=""></button>
+                <button class="redo"><img src="./images/arrow-square-right.svg" alt=""></button>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
