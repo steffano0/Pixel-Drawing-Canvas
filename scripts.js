@@ -14,20 +14,21 @@ for (let i = 0; i < columns; i++) {
     canvas.appendChild(column);
 }
 
-let ismouseDown = false
+
 
 function changeColor () {
     if (ismouseDown) {
-        this.style.backgroundColor = "black"
+        this.style.backgroundColor = color
     }
 }
 
 function clearCanvas() {
     pixels.forEach(pixel => pixel.style.backgroundColor = "white");
+    draw()
 
 }
 
-function draw () {
+function dragandClick () {
     pixels.forEach(pixel => pixel.addEventListener("mousemove", changeColor));
     pixels.forEach(pixel => pixel.addEventListener("mousedown", () => {
         ismouseDown = true
@@ -35,14 +36,28 @@ function draw () {
     pixels.forEach(pixel => pixel.addEventListener("mouseup", () => {
         ismouseDown = false
     }));
+}
+
+function draw () {
+    color = "black"
+    dragandClick();
     
 }
+
+function erase () {
+    color = "white";
+    dragandClick();
+}
+
+let ismouseDown = false;
+let color = "black";
 const pixels = Array.from(document.querySelectorAll(".row"));
 const clear = document.querySelector(".btn-clear");
 const pencil = document.querySelector(".btn-pencil");
 const eraser = document.querySelector(".btn-eraser");
-clear.addEventListener("click", clearCanvas);
+eraser.addEventListener("click", erase);
 pencil.addEventListener("click", draw);
+clear.addEventListener("click", clearCanvas);
 
 
 
