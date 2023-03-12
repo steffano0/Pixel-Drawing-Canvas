@@ -28,8 +28,8 @@ body {
 /* GRID */
 #canvas {
     display: flex;
-    height: 480px;
-    width: 480px;
+    height: 560px;
+    width: 560px;
     border:1px solid black;
 }
 
