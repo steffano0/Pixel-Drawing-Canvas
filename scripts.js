@@ -27,16 +27,22 @@ function clearCanvas() {
 
 }
 
-
-const clear = document.querySelector(".btn-clear");
-clear.addEventListener("click", clearCanvas)
+function draw () {
+    pixels.forEach(pixel => pixel.addEventListener("mousemove", changeColor));
+    pixels.forEach(pixel => pixel.addEventListener("mousedown", () => {
+        ismouseDown = true
+    }));
+    pixels.forEach(pixel => pixel.addEventListener("mouseup", () => {
+        ismouseDown = false
+    }));
+    
+}
 const pixels = Array.from(document.querySelectorAll(".row"));
-pixels.forEach(pixel => pixel.addEventListener("mousemove", changeColor));
-pixels.forEach(pixel => pixel.addEventListener("mousedown", () => {
-    ismouseDown = true
-}));
-pixels.forEach(pixel => pixel.addEventListener("mouseup", () => {
-    ismouseDown = false
-}));
+const clear = document.querySelector(".btn-clear");
+const pencil = document.querySelector(".btn-pencil");
+const eraser = document.querySelector(".btn-eraser");
+clear.addEventListener("click", clearCanvas);
+pencil.addEventListener("click", draw);
+
 
 
