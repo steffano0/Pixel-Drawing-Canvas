@@ -28,14 +28,17 @@ function clearCanvas() {
 
 }
 
+
+    
+
 function dragandClick () {
-    pixels.forEach(pixel => pixel.addEventListener("mousemove", changeColor));
+    pixels.forEach(pixel => pixel.addEventListener("mouseover", changeColor));
     pixels.forEach(pixel => pixel.addEventListener("mousedown", () => {
         ismouseDown = true
     }));
-    pixels.forEach(pixel => pixel.addEventListener("mouseup", () => {
+    document.addEventListener("mouseup", () => {
         ismouseDown = false
-    }));
+    });
 }
 
 function draw () {
@@ -45,7 +48,7 @@ function draw () {
 }
 
 function erase () {
-    color = "white";
+    color = "white"; 
     dragandClick();
 }
 
