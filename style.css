@@ -1,12 +1,12 @@
 body {
     text-align: center;
     font-family: 'Press Start 2P';
-    background-color: #eeeeee;
+    background-color: #E4F9F5;
 
 }
 
 h1 {
-    color: black;
+    color: #40514E;
     font-size: 50px;
     margin-bottom: 60px;
 
@@ -41,9 +41,7 @@ span {
     
   } 
    
-  .btn:hover .btn-slide-show-text1 {
-    margin-left: 65px;
-  } 
+  
    
   .btn-rect-to-round {
     height: 55px;
@@ -52,32 +50,32 @@ span {
     font-weight: 600;
     background: transparent;
     cursor: pointer;
-    transition: all 0.5s ease-in 0s;
+    transition: all 0.4s ease-in 0s;
   } 
    
-  .btn-rect-to-round:hover {
+  .btn-rect-to-round:hover, .active {
     border-radius: 60px;
     color: rgb(255, 255, 255) !important;
   } 
    
   .btn-rect-to-round--black {
-    border: 2px solid rgb(51, 51, 51);
-    color: rgb(51, 51, 51) !important;
+    border: 2px solid #11999E;
+    color: #11999E ;
   } 
    
-  .btn-rect-to-round--black:hover {
-    border-color: rgb(51, 51, 51);
-    background: rgb(51, 51, 51);
+  .btn-rect-to-round--black:hover, .active {
+    border-color: #11999E;
+    background: #11999E;
   } 
 
   .btn-rect-to-round--red {
-    border: 2px solid rgb(239, 35, 60);
-    color: rgb(239, 35, 60) !important;
+    border: 2px solid rgb(239, 35, 110);
+    color: rgb(239, 35, 110) !important;
   } 
    
   .btn-rect-to-round--red:hover {
-    border-color: rgb(239, 35, 60);
-    background: rgb(239, 35, 60);
+    border-color: rgb(239, 35, 110);
+    background: rgb(239, 35, 110);
   } 
 
 /* GRID */

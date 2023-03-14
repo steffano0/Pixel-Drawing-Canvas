@@ -1,12 +1,11 @@
-let columns = 16;
-let rows = 16;
+let size = 16;
 let canvas = document.querySelector("#canvas")
 
 
-for (let i = 0; i < columns; i++) {
+for (let i = 0; i < size; i++) {
     let column = document.createElement("div");
     column.className = "column";
-    for (let j = 0; j < rows; j++) {
+    for (let j = 0; j < size; j++) {
         let row = document.createElement("div");
         row.className = "row";
         column.appendChild(row);
@@ -33,8 +32,6 @@ function changeColor () {
 
 
 
-
-
 function dragandClick () {
     pixels.forEach(pixel => pixel.addEventListener("mousemove", changeColor));
     pixels.forEach(pixel => pixel.addEventListener("mousedown", () => {
@@ -45,36 +42,42 @@ function dragandClick () {
     });
 }
 
-function draw () {
-    
+
+
+function activeMode(mode) {
+    if (mode === "pencil") {
+        pencil.classList.add('active');
+        eraser.classList.remove('active');
+        rainbow.classList.remove('active');
+        onPencil = true;
+        onEraser = false;
+        onRainbow = false;
+
+    } else if (mode === "eraser") {
+        pencil.classList.remove('active');
+        eraser.classList.add('active');
+        rainbow.classList.remove('active');
+        onPencil = false;
+        onEraser = true;
+        onRainbow = false;
+    }
+    else if (mode === "rainbow") {
+        pencil.classList.remove('active');
+        eraser.classList.remove('active');
+        rainbow.classList.add('active');
+        onPencil = false;
+        onEraser = false;
+        onRainbow = true;
+    } else {
+        onPencil = false;
+        onEraser = false;
+        onRainbow = false;
+    }
     dragandClick();
-    onPencil = true;
-    onEraser = false;
-}
-    
-       
-    
-    
-
-function erase () {
-     dragandClick();
-     onEraser = true;
-     onPencil = false;
-}
-
-function drawInColors () {
-    dragandClick();
-    onRainbow = true;
-    onEraser = false;
-    onPencil = false;
 
 }
 
-function clearCanvas() {
-    pixels.forEach(pixel => pixel.style.backgroundColor = "white");
-    
 
-}
 
 
 /* CREATE RANDOM COLOR */
@@ -106,10 +109,18 @@ const clear = document.querySelector(".btn-clear");
 const pencil = document.querySelector(".btn-pencil");
 const eraser = document.querySelector(".btn-eraser");
 const rainbow = document.querySelector(".btn-rainbow");
-eraser.addEventListener("click", erase);
-pencil.addEventListener("click", draw);
-rainbow.addEventListener("click", drawInColors);
-clear.addEventListener("click", clearCanvas);
+eraser.addEventListener("click", () => {
+    activeMode("eraser");
+});
+pencil.addEventListener("click", () => {
+    activeMode("pencil");
+});
+rainbow.addEventListener("click", () => {
+    activeMode("rainbow");
+});
+clear.addEventListener("click", () => {
+    pixels.forEach(pixel => pixel.style.backgroundColor = "white");
+});
 
 
 
