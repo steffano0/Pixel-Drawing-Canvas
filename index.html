@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Drawing Canvas</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
     <script src="scripts.js" defer></script>
     
 </head>
@@ -14,18 +15,15 @@
     <div id="container">
         <div id="canvas-size"></div>
         <div class="tools">
-            <button class="btn-pencil"><img src="./images/pencil-f.svg" alt="pencil"></button>
-            <button class="btn-eraser"><img src="./images/rubber.svg" alt="eraser"></button>
-            <button class="btn-rainbow">Rainbow</button>
-            <button class="btn-clear">Clear</button>
+            <button class="btn-pencil btn-rect-to-round btn-rect-to-round--black">Pencil</button>
+            <button class="btn-eraser btn-rect-to-round btn-rect-to-round--black">Eraser</button>
+            <button class="btn-rainbow btn-rect-to-round btn-rect-to-round--black">Rainbow</button>
+            <button class="btn-clear btn-rect-to-round btn-rect-to-round--black">Clear</button>
             <div class="color-palette"></div>
         </div>
         <div class="canvas-box">
             <div id="canvas"></div>
-            <div class="udrdbtns">
-                <button class="undo"><img src="./images/arrow-square-left.svg" alt=""></button>
-                <button class="redo"><img src="./images/arrow-square-right.svg" alt=""></button>
-            </div>
+            
         </div>
     </div>
     
