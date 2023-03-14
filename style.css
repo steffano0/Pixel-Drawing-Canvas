@@ -83,8 +83,8 @@ span {
 /* GRID */
 #canvas {
     display: flex;
-    height: 560px;
-    width: 560px;
+    height: 480px;
+    width: 480px;
     
     background: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -102,6 +102,26 @@ span {
    
 
 }
+
+/* FOOTER */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  padding-bottom: 0px;
+  font-size: 13px;
+}
+
+
+
 
 
 
