@@ -8,6 +8,7 @@ body {
 h1 {
     color: black;
     font-size: 50px;
+    margin-bottom: 60px;
 
 }
 
@@ -34,8 +35,9 @@ h1 {
 
 /* BUTTONS DESIGN */
 
-.btn {
+span {
     font-family: 'Press Start 2P';
+    font-size: 12px;
     
   } 
    
