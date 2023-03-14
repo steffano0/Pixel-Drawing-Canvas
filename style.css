@@ -52,7 +52,7 @@ span {
     background: transparent;
     cursor: pointer;
     transition: all 0.4s ease-in 0s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   } 
    
   .btn-rect-to-round:hover, .active {
