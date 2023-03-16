@@ -1,18 +1,28 @@
-let size = 16;
-let canvas = document.querySelector("#canvas")
 
 
-for (let i = 0; i < size; i++) {
-    let column = document.createElement("div");
-    column.className = "column";
-    for (let j = 0; j < size; j++) {
-        let row = document.createElement("div");
-        row.className = "row";
-        column.appendChild(row);
 
+function changeSize (size = 16) {
+
+    canvas.innerHTML = ""
+    for (let i = 0; i < size; i++) {
+        let column = document.createElement("div");
+        column.className = "column";
+        for (let j = 0; j < size; j++) {
+            let row = document.createElement("div");
+            row.className = "row";
+            column.appendChild(row);
+        }
+        canvas.appendChild(column);
     }
-    canvas.appendChild(column);
+    pixels = Array.from(document.querySelectorAll(".row"));
+    activeMode(currentMode);
+
+
+
 }
+
+
+
 
 
 
@@ -104,23 +114,40 @@ let color = "black";
 let onPencil = false;
 let onEraser = false;
 let onRainbow = false;
-const pixels = Array.from(document.querySelectorAll(".row"));
+let pixels = [];
+let currentMode = null;
+const canvas = document.querySelector("#canvas")
 const clear = document.querySelector(".btn-clear");
 const pencil = document.querySelector(".btn-pencil");
 const eraser = document.querySelector(".btn-eraser");
 const rainbow = document.querySelector(".btn-rainbow");
+const slider = document.querySelector("#myRange");
+
+slider.addEventListener("input", () => {
+    console.log(slider.value)
+    changeSize(slider.value)
+    
+});
+
 eraser.addEventListener("click", () => {
     activeMode("eraser");
+    currentMode = "eraser";
 });
 pencil.addEventListener("click", () => {
     activeMode("pencil");
+    currentMode = "pencil";
 });
 rainbow.addEventListener("click", () => {
     activeMode("rainbow");
+    currentMode = "rainbow";
 });
 clear.addEventListener("click", () => {
     pixels.forEach(pixel => pixel.style.backgroundColor = "white");
 });
 
 
+window.onload = () => {
+    changeSize();
+    
+}
 
